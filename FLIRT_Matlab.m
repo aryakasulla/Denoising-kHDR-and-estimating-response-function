@@ -3,28 +3,25 @@
 
 % For tmax
 subjList=dir('/home/arya/Downloads/newData/x*');
-% for subjNum = 1:length(subjList)
-%    subjPath = ([subjList(subjNum).folder '/' subjList(subjNum).name]);
-%    in=[subjPath '/fits_' subjList(subjNum).name(1:7) '/tmax.nii.gz'];disp(in)
-%    out=[subjPath '/fits_' subjList(subjNum).name(1:7) '/tmax2MNI.nii.gz'];disp
-%    xfm=([subjPath '/s1/preproc2.feat/reg/example_func2standard.mat']);
-%    ref = ([subjPath '/s1/preproc2.feat/reg/standard.nii.gz']);
-%    %disp(in)
-%    unix(['/usr/share/fsl/5.0/bin/flirt -in ' in ' -applyxfm -init ' xfm ' -out ' out ' -paddingsize 0.0 -interp trilinear -ref ' ref])  
-%     
-% %     unix('/usr/share/fsl/5.0/bin/flirt -in /home/arya/Downloads/newData/xFA0136/fits_xFA0136/tmax.nii.gz -applyxfm -init /home/arya/Downloads/newData/xFA0136/s1/preproc2.feat/reg/example_func2standard.mat -out /home/arya/Downloads/newData/xFA0136/fits_xFA0136/tmax2MNI.nii.gz -paddingsize 0.0 -interp trilinear -ref /home/arya/Downloads/newData/xFA0136/s1/preproc2.feat/reg/standard.nii.gz')
-% end
+for subjNum = 1:length(subjList)
+   subjPath = ([subjList(subjNum).folder '/' subjList(subjNum).name]);
+   in=[subjPath '/fits_' subjList(subjNum).name(1:7) '/tmax.nii.gz'];disp(in)
+   out=[subjPath '/fits_' subjList(subjNum).name(1:7) '/tmax2MNI.nii.gz'];disp    xfm=([subjPath '/s1/preproc2.feat/reg/example_func2standard.mat']);
+   ref = ([subjPath '/s1/preproc2.feat/reg/standard.nii.gz']);
+   %disp(in)
+   unix(['/usr/share/fsl/5.0/bin/flirt -in ' in ' -applyxfm -init ' xfm ' -out ' out ' -paddingsize 0.0 -interp trilinear -ref ' ref])       
+end
 
 % For ymax
 subjList=dir('/home/arya/Downloads/newData/x*');
-% for subjNum = 1:length(subjList)
-%    subjPath = ([subjList(subjNum).folder '/' subjList(subjNum).name]);
-%    in=[subjPath '/fits_' subjList(subjNum).name(1:7) '/ymax.nii.gz'];disp(in)
-%    out=[subjPath '/fits_' subjList(subjNum).name(1:7) '/ymax2MNI.nii.gz'];disp
-%    xfm=([subjPath '/s1/preproc2.feat/reg/example_func2standard.mat']);
-%    ref = ([subjPath '/s1/preproc2.feat/reg/standard.nii.gz']);
-%    %disp(in)
-%    unix(['/usr/share/fsl/5.0/bin/flirt -in ' in ' -applyxfm -init ' xfm ' -out ' out ' -paddingsize 0.0 -interp trilinear -ref ' ref])  
+ for subjNum = 1:length(subjList)
+   subjPath = ([subjList(subjNum).folder '/' subjList(subjNum).name]);
+   in=[subjPath '/fits_' subjList(subjNum).name(1:7) '/ymax.nii.gz'];disp(in)
+   out=[subjPath '/fits_' subjList(subjNum).name(1:7) '/ymax2MNI.nii.gz'];disp
+   xfm=([subjPath '/s1/preproc2.feat/reg/example_func2standard.mat']);
+   ref = ([subjPath '/s1/preproc2.feat/reg/standard.nii.gz']);
+   %disp(in)
+   unix(['/usr/share/fsl/5.0/bin/flirt -in ' in ' -applyxfm -init ' xfm ' -out ' out ' -paddingsize 0.0 -interp trilinear -ref ' ref])  
 %     
 end
 
